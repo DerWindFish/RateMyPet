@@ -1,20 +1,18 @@
 import React from "react";
-import { useState, useEffect, useContext } from "react";
-import AuthContext from '../context/AuthContext'
-import useAxios from '../services/useAxios'
+import { useState, useEffect } from "react";
+import axios from 'axios'
 
 const HomePage = () => {
     let [users, setUsers] = useState([])
-    let {authTokens, logoutUser} = useContext(AuthContext)
 
-    let api = useAxios()
+    const BASE_URL = 'http://localhost:8000/'
 
     useEffect(() => {
         getUser()
     }, [])
 
     let getUser = async() => {
-        let res = await api.get('/api/users/')
+        let res = await axios.get(`${BASE_URL}api/users/`)
 
         if (res.status === 200 ) {
             setUsers(res.data)
@@ -23,7 +21,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <p>You're logged it!</p>
+            <p>Welcome to RateMyPet!</p>
 
             <ul>
                 {users.map(user =>(
