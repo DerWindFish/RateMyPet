@@ -1,3 +1,11 @@
 .logo {
   width: 850px;
 } 
+
+.pet-image {
+  max-height: 500px;
+}
+
+.pet-wrapper {
+  border-radius: 5px solid black;
+}
