@@ -60,7 +60,11 @@ function App() {
           user={user}
           authenticated={authenticated}
         />} />
-        <Route path='/ratethepets' element={<Pets />} />
+        <Route path='/ratethepets' element={<Pets 
+          pet={pet}
+          user={user}
+          authenticated={authenticated}
+        />} />
         <Route path='/login' element={<LoginPage 
           setUser={setUser}
           user={user}
