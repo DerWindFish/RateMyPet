@@ -1,3 +1,28 @@
+:root {
+  --primary-bg: #000411;
+  --link-color-primary: #aeb7b3;
+  --secondary-bg: #38b6ff;
+  --link-color-secondary: #e1efe6;
+  --primary-button-hover: #160c28;
+}
+
+.App {
+  text-align: center;
+  margin-bottom: 50px;
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: var(--secondary-bg);
+  /* font-family: 'Chango', cursive; */
+  list-style: none;
+  font: size 15px;
+
+}
+
 .logo {
   width: 850px;
 } 
@@ -8,4 +33,30 @@
 
 .pet-wrapper {
   border-radius: 5px solid black;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar {
+  font-size: 42px;
+  
+}
+
+nav a,
+nav {
+  text-decoration: none;
+  margin: auto 1em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 800;
+  color: rgb(255, 252, 252);
+}
+
+.nav-h4 {
+  color: white;
+  display: flex;
+  padding-right: 325px;
 }

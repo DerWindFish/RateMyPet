@@ -2,13 +2,15 @@ import './App.css'
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
+import { GetPets } from './services/PetServices'
 import Spalsh from './pages/Spalsh'
 import HomePage from './pages/HomePage'
 import Nav from './components/Nav'
 import Pets from './pages/Pets'
 import LoginPage from './pages/LoginPage'
 import Register from './pages/Register'
-import { GetPets } from './services/PetServices'
+import UserOptions from './pages/UserOptions'
+
 
 
 
@@ -56,6 +58,7 @@ function App() {
           toggleAuthenticated={toggleAuthenticated}
         />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/user_options' element={<UserOptions />} />
       </Routes>
     </div>
   )
