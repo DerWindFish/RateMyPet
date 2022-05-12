@@ -8,6 +8,7 @@ import Nav from './components/Nav'
 import Pets from './pages/Pets'
 import LoginPage from './pages/LoginPage'
 import Register from './pages/Register'
+import { GetPets } from './services/PetServices'
 
 
 
@@ -23,6 +24,21 @@ function App() {
     toggleAuthenticated(true)
   }
 
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
+
+  useEffect(() => {
+    const getTheAnimals = async () => {
+      const data = await GetPets()
+      setPet(data)
+    }
+    getTheAnimals()
+  }, [])
+
   return (
     <div className='App'>
       <Nav />
@@ -30,7 +46,12 @@ function App() {
         <Route path='/' element={<Spalsh />} />
         <Route path='/homepage' element={<HomePage />} />
         {/* <Route path='/ratethepets' element={<Pets />} /> */}
-        <Route path='/login' element={<LoginPage />} />
+        <Route path='/login' element={<LoginPage 
+          setUser={setUser}
+          user={user}
+          authenticated={authenticated}
+          toggleAuthenticated={toggleAuthenticated}
+        />} />
         <Route path='/register' element={<Register />} />
       </Routes>
     </div>
