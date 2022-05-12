@@ -41,7 +41,10 @@ function App() {
 
   return (
     <div className='App'>
-      <Nav />
+      <Nav 
+        authenticated={authenticated}
+        user={user}
+      />
       <Routes>
         <Route path='/' element={<Spalsh />} />
         <Route path='/homepage' element={<HomePage />} />
