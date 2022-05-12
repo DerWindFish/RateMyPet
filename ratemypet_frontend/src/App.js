@@ -1,5 +1,7 @@
 import './App.css'
 import { Routes, Route } from 'react-router'
+import { useState, useEffect } from 'react'
+import { CheckSession } from './services/Auth'
 import Spalsh from './pages/Spalsh'
 import HomePage from './pages/HomePage'
 import Nav from './components/Nav'
@@ -7,7 +9,20 @@ import Pets from './pages/Pets'
 import LoginPage from './pages/LoginPage'
 import Register from './pages/Register'
 
+
+
 function App() {
+
+  const [authenticated, toggleAuthenticated] = useState(false)
+  const [user, setUser] = useState(null)
+  const [pet, setPet] = useState([])
+
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+    toggleAuthenticated(true)
+  }
+
   return (
     <div className='App'>
       <Nav />
