@@ -21,6 +21,7 @@ class PetSerializer(serializers.HyperlinkedModelSerializer):
         view_name='user_detail',
         read_only=True
     )
+
     userratings = serializers.HyperlinkedRelatedField(
         view_name='userrating_detail',
         many=True,
