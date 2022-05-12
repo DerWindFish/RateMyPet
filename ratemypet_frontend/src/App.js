@@ -60,7 +60,7 @@ function App() {
           user={user}
           authenticated={authenticated}
         />} />
-        {/* <Route path='/ratethepets' element={<Pets />} /> */}
+        <Route path='/ratethepets' element={<Pets />} />
         <Route path='/login' element={<LoginPage 
           setUser={setUser}
           user={user}
@@ -68,7 +68,9 @@ function App() {
           toggleAuthenticated={toggleAuthenticated}
         />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/user_options' element={<UserOptions />} />
+        <Route path='/user_options' element={<UserOptions 
+          user={user}
+        />} />
       </Routes>
     </div>
   )

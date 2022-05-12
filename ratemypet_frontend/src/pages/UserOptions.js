@@ -1,7 +1,7 @@
-const UserOptions = () => {
+const UserOptions = ({user}) => {
     return (
         <div>
-            Welcome, User Options are coming soon!
+            <h1>Welcome {user.username}, User Options are coming soon!</h1>
         </div>
     )
 }
