@@ -26,7 +26,7 @@ const Nav = ({authenticated, user}) => {
         <header>
             <Link to='/'>
                 <div className="logo-wrapper" alt='logo'>
-                    <img className="logo" alt='ratemypetlogo' src='https://imgur.com/cUheGkw.png' />
+                    <img className="logo" alt='ratemypetlogo' src='https://imgur.com/oTKZLAo.png' />
                 </div>
             </Link>
             {authenticated && user ? authOptions : unAuthOptions}
