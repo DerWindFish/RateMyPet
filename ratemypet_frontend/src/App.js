@@ -1,5 +1,6 @@
 import './App.css'
 import { Routes, Route } from 'react-router'
+import Spalsh from './pages/Spalsh'
 import HomePage from './pages/HomePage'
 import Nav from './components/Nav'
 import Pets from './pages/Pets'
@@ -11,7 +12,8 @@ function App() {
     <div className='App'>
       <Nav />
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<Spalsh />} />
+        <Route path='/homepage' element={<HomePage />} />
         {/* <Route path='/ratethepets' element={<Pets />} /> */}
         <Route path='/login' element={<LoginPage />} />
         <Route path='/register' element={<Register />} />
