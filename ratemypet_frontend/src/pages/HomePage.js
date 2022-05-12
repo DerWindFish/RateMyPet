@@ -1,33 +1,35 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
-const HomePage = () => {
-    // let [users, setUsers] = useState([])
+const HomePage = ({authenticated, user}) => {
 
-    // const BASE_URL = 'http://localhost:8000/'
+    let navigate = useNavigate()
 
-    // useEffect(() => {
-    //     getUser()
-    // }, [])
+    let authOptions
+    if(user) {
+        authOptions = (
+            <div>
+                <h2>Welcome to RateMyPet!</h2>
+            </div>
+        )
+    }
 
-    // let getUser = async() => {
-    //     let res = await axios.get(`${BASE_URL}api/users/`)
-
-    //     if (res.status === 200 ) {
-    //         setUsers(res.data)
-    //     }
-    // }
+    const unAuthOptions = (
+        <div className="spalsh-page">
+            <h2>Welcome to RateMyPet!</h2>
+            <button className="login-button" onClick={() => navigate('/login')}>
+                Click To Sign In
+            </button>
+            <h2>Need to Register?</h2>
+            <button className="login-button" onClick={() => navigate('/register')}>
+                Click to make an Account
+            </button>
+        </div>
+    )
 
     return (
         <div>
-            <p>Welcome to RateMyPet!</p>
-
-            {/* <ul>
-                {users.map(user =>(
-                    <li key={user.id}>{user.username}</li>
-                ))}
-            </ul> */}
+        {authenticated && user ? authOptions : unAuthOptions}
         </div>
     )
 }

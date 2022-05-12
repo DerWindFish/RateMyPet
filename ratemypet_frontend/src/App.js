@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
 import { GetPets } from './services/PetServices'
-import Spalsh from './pages/Spalsh'
+// import Spalsh from './pages/Spalsh'
 import HomePage from './pages/HomePage'
 import Nav from './components/Nav'
 import Pets from './pages/Pets'
@@ -41,15 +41,25 @@ function App() {
     getTheAnimals()
   }, [])
 
+  const logout = () => {
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
+
   return (
     <div className='App'>
       <Nav 
         authenticated={authenticated}
         user={user}
+        logout={logout}
       />
       <Routes>
-        <Route path='/' element={<Spalsh />} />
-        <Route path='/homepage' element={<HomePage />} />
+        {/* <Route path='/' element={<Spalsh />} /> */}
+        <Route path='/' element={<HomePage 
+          user={user}
+          authenticated={authenticated}
+        />} />
         {/* <Route path='/ratethepets' element={<Pets />} /> */}
         <Route path='/login' element={<LoginPage 
           setUser={setUser}

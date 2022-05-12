@@ -26,7 +26,7 @@ const SignIn = (props) => {
     props.toggleAuthenticated(true)
     localStorage.setItem('user', payload.email)
     localStorage.setItem('user-id', payload.id)
-    naviagte('/homepage')
+    naviagte('/')
 
   }
 

@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = ({authenticated, user}) => {
+const Nav = ({authenticated, user, logout}) => {
     let authOptions
     if (user) {
         authOptions = (
             <nav className="navbar">
                 <h4 className="nav-h4">Welcome in, {user.username}!</h4>
-                <Link to='/homepage'>Home Page</Link>
+                <Link to='/homepage'>Home</Link>
                 <Link to='/user_options'>User</Link>
                 <Link to='/ratethepets'>The Pets</Link>
+                <Link onClick={logout} to='/'>LogOut</Link>
             </nav>
         )
     }
@@ -19,6 +20,7 @@ const Nav = ({authenticated, user}) => {
             <Link to='/'>Home</Link>
             <Link to='/login'>Login</Link>
             <Link to='/register'>Register</Link>
+            
         </nav>
     )
 
