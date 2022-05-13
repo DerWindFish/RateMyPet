@@ -43,7 +43,7 @@ const Register = () => {
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Username</label>
             <input
               onChange={handleChange}
               name="username"
@@ -71,6 +71,7 @@ const Register = () => {
               onChange={handleChange}
               type="password"
               name="password"
+              placeholder='**********'
               value={formValues.password}
               required
             />
@@ -81,6 +82,7 @@ const Register = () => {
               onChange={handleChange}
               type="password"
               name="confirmPassword"
+              placeholder='**********'
               value={formValues.confirmPassword}
               required
             />
@@ -92,7 +94,7 @@ const Register = () => {
                 formValues.confirmPassword === formValues.password)
             }
           >
-            Sign In
+            Register
           </button>
         </form>
       </div>
