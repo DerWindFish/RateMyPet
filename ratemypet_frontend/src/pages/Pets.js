@@ -1,7 +1,7 @@
 import PetDetail from "../components/PetDetail";
 import { useNavigate } from "react-router-dom"
 
-const Pets = ({pet, user, authenticated }) => {
+const Pets = ({pet, user, userRating, rating, authenticated }) => {
 
     let navigate = useNavigate()
 

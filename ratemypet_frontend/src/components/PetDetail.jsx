@@ -1,8 +1,19 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import UserRatings from './UserRatings'
+import { GetUserRating } from "../services/PetServices"
 
 const PetDetail = ({pets}) => {
 
   const [clicked, isClicked] = useState(false)
+  const [userRating, setUserRating] = useState([])
+
+  useEffect(() => {
+    const getUserRatings = async () => {
+      const data = await GetUserRating()
+      setUserRating(data)
+    }
+    getUserRatings()
+  },[])
   
   return(
     <div className="pet-card">
@@ -20,6 +31,14 @@ const PetDetail = ({pets}) => {
                     </h3>
                   </div>
                   <p>User Ratings:</p>
+                  {userRating.map((userRatings) => (
+                    <UserRatings 
+                      userRatings={userRatings}
+                      key={userRatings.key}
+                      userrating={userRatings.userrating}
+                    />
+                  ))}
+                  
                 </div>
               </div>
             </div>
