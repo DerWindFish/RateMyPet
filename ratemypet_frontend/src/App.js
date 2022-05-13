@@ -2,8 +2,7 @@ import './App.css'
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
-import { GetPets } from './services/PetServices'
-// import Spalsh from './pages/Spalsh'
+import { GetPets, GetRatings, GetUserRating } from './services/PetServices'
 import HomePage from './pages/HomePage'
 import Nav from './components/Nav'
 import Pets from './pages/Pets'
@@ -19,6 +18,8 @@ function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
   const [pet, setPet] = useState([])
+  const [userRating, setUserRating] = useState([])
+  const [rating, setRating] = useState([])
 
   const checkToken = async () => {
     const user = await CheckSession()
@@ -47,6 +48,21 @@ function App() {
     localStorage.clear()
   }
 
+  useEffect(() => {
+    const getUserRatings = async () => {
+      const data = await GetUserRating()
+      setUserRating(data)
+    }
+    getUserRatings()
+  },[])
+
+  useEffect(() => {
+    const getTheRatings = async () => {
+      const data = await GetRatings()
+      setRating(data)
+    }
+    getTheRatings()
+  }, [])
   return (
     <div className='App'>
       <Nav 
@@ -55,7 +71,6 @@ function App() {
         logout={logout}
       />
       <Routes>
-        {/* <Route path='/' element={<Spalsh />} /> */}
         <Route path='/' element={<HomePage 
           user={user}
           authenticated={authenticated}
@@ -63,6 +78,8 @@ function App() {
         <Route path='/ratethepets' element={<Pets 
           pet={pet}
           user={user}
+          userRating={userRating}
+          ratings={rating}
           authenticated={authenticated}
         />} />
         <Route path='/login' element={<LoginPage 
