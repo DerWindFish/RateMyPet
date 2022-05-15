@@ -20,7 +20,6 @@ function App() {
   const [user, setUser] = useState(null)
   const [pet, setPet] = useState([])
   const [userRating, setUserRating] = useState([])
-  // const [rating, setRating] = useState([])
 
   const checkToken = async () => {
     const user = await CheckSession()
@@ -57,14 +56,6 @@ function App() {
     getUserRatings()
   },[])
 
-  // useEffect(() => {
-  //   const getTheRatings = async () => {
-  //     const data = await GetRatings()
-  //     setRating(data)
-  //   }
-  //   getTheRatings()
-  // }, [])
-
   return (
     <div className='App'>
       <ContextProvider>
@@ -82,7 +73,6 @@ function App() {
           pet={pet}
           user={user}
           userRating={userRating}
-          // ratings={rating}
           authenticated={authenticated}
         />} />
         <Route path='/login' element={<LoginPage 

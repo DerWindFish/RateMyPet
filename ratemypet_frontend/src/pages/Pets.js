@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 import { AddPets } from '../services/PetServices'
 
-const Pets = ({pet, user, userRating, rating, authenticated }) => {
+const Pets = ({pet, user, userRating, authenticated }) => {
 
     let navigate = useNavigate()
 
@@ -44,7 +44,6 @@ const Pets = ({pet, user, userRating, rating, authenticated }) => {
                     key={pets.id}
                     image_url={pets.image_url}
                     rating={pets.rating}
-                    ratings={pets.ratings}
                 />
             ))}
             <form className="col" onSubmit={handleSubmit}>
