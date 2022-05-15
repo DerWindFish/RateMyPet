@@ -54,7 +54,6 @@ export const GetUserRating = async (data) => {
 export const GetReviews = async () => {
   try {
     const res = await Client.get(`/api/reviews`)
-    console.log(res.data)
     return res.data
   } catch (error) {
     throw error
@@ -81,10 +80,10 @@ export const UpdateReview = async (data) => {
   }
 }
 
-export const DeleteReview = async (data) => {
+export const DeleteReview = async (review_id) => {
   try {
-    console.log(data)
-    const res = await Client.delete(`/api/reviews/${data.id}`)
+    console.log(review_id)
+    const res = await Client.delete(`/api/reviews/${review_id}`)
     return res.data
   } catch (error) {
     throw error
