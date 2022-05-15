@@ -10,6 +10,7 @@ const Nav = ({authenticated, user, logout}) => {
                 <Link to='/'>Home</Link>
                 <Link to='/user_options'>User</Link>
                 <Link to='/ratethepets'>The Pets</Link>
+                <Link to='/reviews'>Reviews</Link>
                 <Link onClick={logout} to='/'>LogOut</Link>
             </nav>
         )
@@ -20,6 +21,7 @@ const Nav = ({authenticated, user, logout}) => {
             <Link to='/'>Home</Link>
             <Link to='/login'>Login</Link>
             <Link to='/register'>Register</Link>
+            <Link to='/reviews'>Reviews</Link>
             
         </nav>
     )

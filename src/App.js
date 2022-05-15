@@ -2,13 +2,14 @@ import './App.css'
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
-import { GetPets, GetUserRating } from './services/PetServices'
+import { GetPets, GetReviews, GetUserRating } from './services/PetServices'
 import HomePage from './pages/HomePage'
 import Nav from './components/Nav'
 import Pets from './pages/Pets'
 import LoginPage from './pages/LoginPage'
 import Register from './pages/Register'
 import UserOptions from './pages/UserOptions'
+import Reviews from './pages/Reviews'
 import { ContextProvider } from './components/Context'
 
 
@@ -20,6 +21,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [pet, setPet] = useState([])
   const [userRating, setUserRating] = useState([])
+  const [reviews, setReviews] = useState([])
 
   const checkToken = async () => {
     const user = await CheckSession()
@@ -56,6 +58,14 @@ function App() {
     getUserRatings()
   },[])
 
+  useEffect(() => {
+    const getReviews = async () => {
+      const data = await GetReviews()
+      setReviews(data)
+    }
+    getReviews()
+  }, [])
+
   return (
     <div className='App'>
       <ContextProvider>
@@ -85,6 +95,7 @@ function App() {
         <Route path='/user_options' element={<UserOptions 
           user={user}
         />} />
+        <Route path='/reviews' element={<Reviews />} />
       </Routes>
       </ContextProvider>
     </div>

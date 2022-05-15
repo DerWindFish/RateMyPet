@@ -54,6 +54,7 @@ export const GetUserRating = async (data) => {
 export const GetReviews = async () => {
   try {
     const res = await Client.get(`/api/reviews`)
+    console.log(res.data)
     return res.data
   } catch (error) {
     throw error

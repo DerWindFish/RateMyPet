@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import UserRatings from './UserRatings'
-import { GetUserRating, GetRatings } from "../services/PetServices"
+import { GetUserRating } from "../services/PetServices"
 
 const PetDetail = ({pets}) => {
 
