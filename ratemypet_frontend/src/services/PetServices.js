@@ -39,10 +39,51 @@ export const GetUserRating = async (data) => {
   }
 }
 
-export const GetRatings = async (data) => {
+// Going to add back in later
+
+// export const GetRatings = async (data) => {
+//   try {
+//     const res = await Client.get(`/api/ratings`)
+//     console.log(res.data)
+//     return res.data
+//   } catch (error) {
+//     throw error
+//   }
+// }
+
+export const GetReviews = async () => {
   try {
-    const res = await Client.get(`/api/ratings`)
+    const res = await Client.get(`/api/reviews`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const AddReview = async (data) => {
+  try {
+    const res = await Client.post(`/api/reviews`, data)
     console.log(res.data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const UpdateReview = async (data) => {
+  try {
+    const res = await Client.put(`/api/reviews/${data.id}`, data)
+    console.log(res.data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const DeleteReview = async (data) => {
+  try {
+    console.log(data)
+    const res = await Client.delete(`/api/reviews/${data.id}`)
     return res.data
   } catch (error) {
     throw error
