@@ -12,6 +12,4 @@ In this project I plan to use Django and PostgreSQL for my back end and React fo
 
 ***
 ## Other Links:
-ERD: ![ERD](https://imgur.com/T4JScsc.png) ||
-CHD: ![CHD](https://imgur.com/DwpX48s.png) ||
 [Trello](https://trello.com/b/XYo5UYBZ/weratepets)
