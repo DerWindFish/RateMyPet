@@ -2,7 +2,7 @@ import './App.css'
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
-import { GetPets, GetRatings, GetUserRating } from './services/PetServices'
+import { GetPets, GetUserRating } from './services/PetServices'
 import HomePage from './pages/HomePage'
 import Nav from './components/Nav'
 import Pets from './pages/Pets'
@@ -20,7 +20,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [pet, setPet] = useState([])
   const [userRating, setUserRating] = useState([])
-  const [rating, setRating] = useState([])
+  // const [rating, setRating] = useState([])
 
   const checkToken = async () => {
     const user = await CheckSession()
@@ -57,13 +57,14 @@ function App() {
     getUserRatings()
   },[])
 
-  useEffect(() => {
-    const getTheRatings = async () => {
-      const data = await GetRatings()
-      setRating(data)
-    }
-    getTheRatings()
-  }, [])
+  // useEffect(() => {
+  //   const getTheRatings = async () => {
+  //     const data = await GetRatings()
+  //     setRating(data)
+  //   }
+  //   getTheRatings()
+  // }, [])
+
   return (
     <div className='App'>
       <ContextProvider>
@@ -81,7 +82,7 @@ function App() {
           pet={pet}
           user={user}
           userRating={userRating}
-          ratings={rating}
+          // ratings={rating}
           authenticated={authenticated}
         />} />
         <Route path='/login' element={<LoginPage 
