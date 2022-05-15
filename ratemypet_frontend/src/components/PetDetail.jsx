@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react"
 import UserRatings from './UserRatings'
-import { GetUserRating } from "../services/PetServices"
+import { GetUserRating, GetRatings } from "../services/PetServices"
 
 const PetDetail = ({pets}) => {
 
   const [clicked, isClicked] = useState(false)
   const [userRating, setUserRating] = useState([])
+
 
   useEffect(() => {
     const getUserRatings = async () => {
@@ -30,7 +31,7 @@ const PetDetail = ({pets}) => {
                       <button className="x" onClick={() => isClicked(false)}>x</button>
                     </h3>
                   </div>
-                  <p>User Ratings:</p>
+                  <p>Select A Rating:</p>
                   {userRating.map((userRatings) => (
                     <UserRatings 
                       userRatings={userRatings}
@@ -38,7 +39,7 @@ const PetDetail = ({pets}) => {
                       userrating={userRatings.userrating}
                     />
                   ))}
-                  
+                  <p>User Ratings:</p>
                 </div>
               </div>
             </div>
@@ -53,9 +54,6 @@ const PetDetail = ({pets}) => {
       }} onClick={()=> isClicked(true)}>
         <div className='title-bar'>
           <h3>{ pets.rating }</h3>
-              {/* <div className="add=wrapper">
-                <button onClick={()=> isClicked(true)} classname='isClicked-button'>Show Info</button>
-              </div> */}
         </div>
       </div>
     </div>

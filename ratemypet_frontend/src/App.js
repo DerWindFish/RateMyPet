@@ -9,6 +9,7 @@ import Pets from './pages/Pets'
 import LoginPage from './pages/LoginPage'
 import Register from './pages/Register'
 import UserOptions from './pages/UserOptions'
+import { ContextProvider } from './components/Context'
 
 
 
@@ -65,6 +66,7 @@ function App() {
   }, [])
   return (
     <div className='App'>
+      <ContextProvider>
       <Nav 
         authenticated={authenticated}
         user={user}
@@ -93,6 +95,7 @@ function App() {
           user={user}
         />} />
       </Routes>
+      </ContextProvider>
     </div>
   )
 }
