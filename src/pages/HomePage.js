@@ -17,11 +17,11 @@ const HomePage = ({authenticated, user}) => {
     const unAuthOptions = (
         <div className="spalsh-page">
             <h2>Welcome to RateMyPet!</h2>
-            <button className="login-button" onClick={() => navigate('/login')}>
+            <button className="button-button-button2" onClick={() => navigate('/login')}>
                 Click To Sign In
             </button>
             <h2>Need to Register?</h2>
-            <button className="login-button" onClick={() => navigate('/register')}>
+            <button className="button-button-button2" onClick={() => navigate('/register')}>
                 Click to make an Account
             </button>
         </div>

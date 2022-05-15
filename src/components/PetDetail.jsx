@@ -28,7 +28,7 @@ const PetDetail = ({pets}) => {
                   <div className="popup-title-wrapper">
                     <h3 className="popup-title-name">
                       {pets.rating}
-                      <button className="x" onClick={() => isClicked(false)}>x</button>
+                      <button className="button-button-button2" onClick={() => isClicked(false)}>x</button>
                     </h3>
                   </div>
                   <p>Select A Rating:</p>

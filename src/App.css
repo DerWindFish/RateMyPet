@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
 :root {
   --primary-bg: #000411;
   --link-color-primary: #aeb7b3;
@@ -128,4 +130,26 @@ nav {
 .popup-title-wrapper {
   display: inline-block;
   width: 100%;
+}
+
+.button-button-button2 {
+  color: white;
+  background-color: #3892ff;
+  width: fit-content;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  text-align: center;
+  
+}
+
+.button-button-button2:hover{
+  background-color: #1468cf;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

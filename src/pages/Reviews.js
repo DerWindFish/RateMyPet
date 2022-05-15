@@ -61,8 +61,8 @@ const Reviews = () => {
                 <div key={reviews.id}>
                     <h3>{review.name} writes:</h3>
                     <p>"{review.review}"</p>
-                    <button>Update Review</button>
-                    <button onClick={() => 
+                    <button className="button-button-button2">Update Review</button>
+                    <button className="button-button-button2" onClick={() => 
                     {deleteReview(review)}}>Delete Review</button>
                 </div>
             )
@@ -88,7 +88,7 @@ const Reviews = () => {
                     required
                 />
                 <br />
-                <button disabled={!formValues.name || !formValues.review} className='button-button-button-2'>Add Pet</button>
+                <button disabled={!formValues.name || !formValues.review} className='button-button-button2'>Add Pet</button>
             </form>
         
         </div>

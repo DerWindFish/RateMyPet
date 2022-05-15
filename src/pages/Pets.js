@@ -67,7 +67,7 @@ const Pets = ({pet, user, userRating, authenticated }) => {
                     required
                 />
                 <br />
-                <button disabled={!formValues.image_url || !formValues.rating} className='button-button-button-2'>Add Pet</button>
+                <button disabled={!formValues.image_url || !formValues.rating} className='button-button-button2'>Add Pet</button>
             </form>
             
             </div>
