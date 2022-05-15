@@ -112,10 +112,6 @@ nav {
   height: 200px;
 }
 
-/* .popup {
-  border-radius: 20px;
-} */
-
 .popup-info {
   text-align: left;
   border: 5px solid #38b6ff;
@@ -153,3 +149,28 @@ nav {
   align-items: center;
   justify-content: center;
 }
+
+input {
+  width: 150px;
+  height: 25px;
+  border-radius: 5px;
+  border: 3px solid #0a98e4;
+  color: #000000;
+  font-size: 18px;
+
+}
+.review {
+  border: 5px solid rgb(30, 98, 225);
+}
+.review-h1 {
+  text-align: center;
+}
+
+.reviews-reviews {
+
+  padding-left: 10px;
+  text-align: left;
+  display: block;
+  left: 50%;
+}
+

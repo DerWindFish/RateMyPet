@@ -54,11 +54,11 @@ const Reviews = () => {
     }
 
     return(
-        <div>
-            <h1>User Reviews:</h1>
+        <div className="review">
+            <h1 className="review-h1">User Reviews:</h1>
         {reviews.map((review) => {
             return(
-                <div key={reviews.id}>
+                <div className="reviews-reviews" key={reviews.id}>
                     <h3>{review.name} writes:</h3>
                     <p>"{review.review}"</p>
                     <button className="button-button-button2">Update Review</button>
