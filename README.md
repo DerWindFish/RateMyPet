@@ -35,3 +35,20 @@ Are you familar with the staggeringly popular Twitter account WeRateDogs? Well n
 ***
 ## Other Links:
 [Trello](https://trello.com/b/XYo5UYBZ/weratepets)
+***
+## Special Thanks to:
+- Nell
+- Michelle
+- Ethan
+- Angie
+- Ran
+- Ben
+- Nabila
+- Joey
+- Alison
+- Caitie
+- Hopper
+
+Letting me use the pictures of your adorible pets for my project, Couldn't have done it without you!
+
+The [WeRateDog](https://twitter.com/dog_rates) Twitter for the inspiration
