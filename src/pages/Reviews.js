@@ -1,12 +1,13 @@
 import ReviewDetails from "../components/ReviewDetails"
-import { AddReview, GetReviews, DeleteReview } from "../services/PetServices"
+import { AddReview, GetReviews, DeleteReview, UpdateReview} from "../services/PetServices"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router"
 import { useParams } from "react-router"
 
 const Reviews = () => {
 
-    let {id} = useParams()
+    let {review_id} = useParams()
+    review_id = parseInt(review_id)
 
     let navigate = useNavigate()
 
@@ -35,8 +36,6 @@ const Reviews = () => {
         })
         navigate('/reviews')
         console.log('I submitted')
-
-
     }
 
     useEffect(() => {
@@ -53,6 +52,11 @@ const Reviews = () => {
         await DeleteReview(review.id)
     }
 
+    const editReview = async (review_id) => {
+        // await UpdateReview()
+        navigate(`/updatingreview/${review_id}`)
+    }
+
     return(
         <div className="review">
             <h1 className="review-h1">User Reviews:</h1>
@@ -61,7 +65,8 @@ const Reviews = () => {
                 <div className="reviews-reviews" key={reviews.id}>
                     <h3>{review.name} writes:</h3>
                     <p>"{review.review}"</p>
-                    <button className="button-button-button2">Update Review</button>
+                    <button className="button-button-button2" onClick={() => 
+                        {editReview()}}>Update Review</button>
                     <button className="button-button-button2" onClick={() => 
                     {deleteReview(review)}}>Delete Review</button>
                 </div>

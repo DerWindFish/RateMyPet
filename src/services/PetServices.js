@@ -70,10 +70,10 @@ export const AddReview = async (data) => {
   }
 }
 
-export const UpdateReview = async (data) => {
+export const UpdateReview = async (review_id, data) => {
   try {
-    const res = await Client.put(`/api/reviews/${data.id}`, data)
-    console.log(res.data)
+    const res = await Client.put(`/api/reviews/${review_id}`, data)
+    console.log(review_id)
     return res.data
   } catch (error) {
     throw error
