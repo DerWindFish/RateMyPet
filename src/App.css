@@ -28,6 +28,11 @@ body {
   width: 850px;
 } 
 
+.ratethepets:hover {
+  color: rgb(4, 145, 187);
+  cursor: pointer;
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -46,6 +51,10 @@ nav {
   border-radius: 6px;
   font-weight: 800;
   color: rgb(255, 252, 252);
+}
+
+nav a:hover {
+  color: #e1efe8;
 }
 
 .nav-h4 {

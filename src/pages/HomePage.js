@@ -9,14 +9,17 @@ const HomePage = ({authenticated, user}) => {
     if(user) {
         authOptions = (
             <div>
-                <h2>Welcome to RateMyPet!</h2>
+                <h1>Welcome to RateMyPet!</h1>
+            <h2>Here at RateMyPet, we take your lovely, wonderful, amazing pet photos and give them funny, whimsicle, and just generally wonderful ratings!</h2>
+            <h3 className='ratethepets' onClick={() => navigate('/ratethepets')}>Click Here to go Straight to the Pets!</h3>
             </div>
         )
     }
 
     const unAuthOptions = (
         <div className="spalsh-page">
-            <h2>Welcome to RateMyPet!</h2>
+            <h1>Welcome to RateMyPet!</h1>
+            <h2>Here at RateMyPet, we take your lovely, wonderful, amazing pet photos and give them funny, whimsicle, and just generally wonderful ratings!</h2>
             <button className="button-button-button2" onClick={() => navigate('/login')}>
                 Click To Sign In
             </button>
@@ -24,6 +27,8 @@ const HomePage = ({authenticated, user}) => {
             <button className="button-button-button2" onClick={() => navigate('/register')}>
                 Click to make an Account
             </button>
+            <h3>Not sure if this is the place for you? Check out our Review page for what other users are saying about this amazing site!</h3>
+            <button className="button-button-button2" onClick={() => navigate('/reviews')}>Reviews</button>
         </div>
     )
 
