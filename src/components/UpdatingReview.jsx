@@ -28,20 +28,7 @@ const UpdatingReview = () => {
     }
 
     return(
-        // <div className="review">
-        //     <h1 className="review-h1">User Reviews:</h1>
-        // {reviews.map((review) => {
-        //     return(
-        //         <div className="reviews-reviews" key={reviews.id}>
-        //             <h3>{review.name} writes:</h3>
-        //             <p>"{review.review}"</p>
-        //             <button className="button-button-button2" onClick={() => 
-        //                 {editReview()}}>Update Review</button>
-        //             <button className="button-button-button2" onClick={() => 
-        //             {deleteReview(review)}}>Delete Review</button>
-        //         </div>
-        //     )
-        //     })}
+
             <form className="col" onSubmit={handleSubmit}>
                 <h4>Add A Review:</h4>
                 <label htmlFor="Image_Url">Name: </label>
@@ -66,7 +53,6 @@ const UpdatingReview = () => {
                 <button disabled={!formValues.name || !formValues.review} className='button-button-button2'>Update Review</button>
             </form>
         
-        // </div>
     )
 
 }

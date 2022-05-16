@@ -48,7 +48,6 @@ const Reviews = () => {
       }, [])
 
     const deleteReview = async (review) => {
-        // e.preventDefault()
         await DeleteReview(review.id)
     }
 
