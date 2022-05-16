@@ -2,7 +2,7 @@ import './App.css'
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
-import { GetPets, GetReviews, GetUserRating, UpdateReview } from './services/PetServices'
+import { GetPets, GetReviews, GetUserRating} from './services/PetServices'
 import HomePage from './pages/HomePage'
 import Nav from './components/Nav'
 import Pets from './pages/Pets'
@@ -12,8 +12,6 @@ import UserOptions from './pages/UserOptions'
 import Reviews from './pages/Reviews'
 import UpdatingReview from './components/UpdatingReview'
 import { ContextProvider } from './components/Context'
-
-
 
 
 function App() {

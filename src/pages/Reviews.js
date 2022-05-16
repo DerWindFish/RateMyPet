@@ -1,5 +1,4 @@
-import ReviewDetails from "../components/ReviewDetails"
-import { AddReview, GetReviews, DeleteReview, UpdateReview} from "../services/PetServices"
+import { AddReview, GetReviews, DeleteReview} from "../services/PetServices"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router"
 import { useParams } from "react-router"
@@ -16,7 +15,6 @@ const Reviews = () => {
         name: '', 
         review: ''
     })
-    const [targeted, setTargeted] = useState(false)
 
     const handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -92,7 +90,7 @@ const Reviews = () => {
                     required
                 />
                 <br />
-                <button disabled={!formValues.name || !formValues.review} className='button-button-button2'>Add Pet</button>
+                <button disabled={!formValues.name || !formValues.review} className='button-button-button2'>Add Review</button>
             </form>
         
         </div>
